@@ -1,8 +1,89 @@
-<section id="home">
-    <h2>Bem-vindo ao DevStream</h2>
-    <p>Transmita seu conteúdo sem problemas.</p>
-    <button id="update-streams">Atualizar Transmissões</button>
-    <div class="stream-grid">
-        <!-- As miniaturas serão adicionadas dinamicamente aqui -->
-    </div>
-</section>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DevStream</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>DevStream</h1>
+    </header>
+    <nav>
+        <ul>
+            <li><a href="#home">Home</a></li>
+            <li><a href="#features">Features</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
+    <main>
+        <section id="home">
+            <h2>Bem-vindo ao DevStream</h2>
+            <p>Transmita seu conteúdo sem problemas.</p>
+            
+            <!-- Grid de miniaturas das transmissões ao vivo -->
+            <div class="stream-grid">
+                <div class="stream-thumbnail">
+                    <img src="https://via.placeholder.com/150" alt="Transmissão ao vivo 1">
+                    <p>Nome do usuário 1</p>
+                </div>
+                <div class="stream-thumbnail">
+                    <img src="https://via.placeholder.com/150" alt="Transmissão ao vivo 2">
+                    <p>Nome do usuário 2</p>
+                </div>
+                <div class="stream-thumbnail">
+                    <img src="https://via.placeholder.com/150" alt="Transmissão ao vivo 3">
+                    <p>Nome do usuário 3</p>
+                </div>
+            </div>
+        </section>
+        <section id="features">
+            <h2>Características</h2>
+            <ul>
+                <li>Transmissão ao vivo</li>
+                <li>Bate-papo em tempo real</li>
+                <li>Sobreposições interativas</li>
+            </ul>
+        </section>
+        <section id="contact">
+            <h2>Contate-nos</h2>
+            <p>Para obter suporte, envie um e-mail para <a href="mailto:support@devstream.com">support@devstream.com</a></p>
+        </section>
+    </main>
+    <footer>
+        <p>&copy; 2024 DevStream. All rights reserved.</p>
+    </footer>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            // Adicionar evento de clique nas miniaturas
+            const thumbnails = document.querySelectorAll('.stream-thumbnail');
+            
+            thumbnails.forEach(thumbnail => {
+                thumbnail.addEventListener('click', () => {
+                    const username = thumbnail.querySelector('p').textContent;
+                    alert(`Iniciando transmissão de ${username}`);
+                    // Aqui você pode adicionar a lógica para exibir detalhes ou iniciar a transmissão
+                });
+            });
+
+            // Atualizar a lista de transmissões
+            const updateButton = document.getElementById('update-streams');
+            const streamGrid = document.querySelector('.stream-grid');
+
+            if (updateButton) {
+                updateButton.addEventListener('click', () => {
+                    // Lógica para adicionar novas miniaturas
+                    const newThumbnail = document.createElement('div');
+                    newThumbnail.classList.add('stream-thumbnail');
+                    newThumbnail.innerHTML = `
+                        <img src="path/to/new-image.jpg" alt="New Stream">
+                        <p>Nome do usuário Novo</p>
+                    `;
+                    streamGrid.appendChild(newThumbnail);
+                });
+            }
+        });
+    </script>
+</body>
+</html>
