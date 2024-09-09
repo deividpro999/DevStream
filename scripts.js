@@ -1,21 +1,27 @@
-document.addEventListener('DOMContentLoaded', () => {
-    const input = document.querySelector('.chat-input input');
-    const button = document.querySelector('.chat-input button');
-    const messages = document.querySelector('.chat-messages');
+// JavaScript para funcionalidades básicas
 
-    button.addEventListener('click', () => {
-        if (input.value.trim() !== '') {
-            const message = document.createElement('div');
-            message.textContent = input.value;
-            messages.appendChild(message);
-            input.value = '';
-            messages.scrollTop = messages.scrollHeight;
-        }
-    });
+// Função para enviar mensagem no chat
+document.getElementById('send-button').addEventListener('click', function() {
+    const messageInput = document.getElementById('message-input');
+    const message = messageInput.value.trim();
 
-    input.addEventListener('keypress', (e) => {
-        if (e.key === 'Enter') {
-            button.click();
-        }
-    });
+    if (message) {
+        const chatBox = document.querySelector('.chat-box');
+        const userMessage = document.createElement('div');
+        userMessage.classList.add('message', 'user-message');
+        userMessage.innerHTML = `<p>${message}</p>`;
+        chatBox.appendChild(userMessage);
+        messageInput.value = '';
+
+        // Simular resposta da Emma
+        setTimeout(() => {
+            const emmaMessage = document.createElement('div');
+            emmaMessage.classList.add('message', 'emma-message');
+            emmaMessage.innerHTML = `<p>Resposta automática da Emma.</p>`;
+            chatBox.appendChild(emmaMessage);
+            chatBox.scrollTop = chatBox.scrollHeight; // Rolagem automática
+        }, 1000);
+
+        chatBox.scrollTop = chatBox.scrollHeight; // Rolagem automática
+    }
 });
