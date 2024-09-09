@@ -36,15 +36,20 @@
         }
 
         /* Estilos para a notificação */
-        .notification {
+        .notification-container {
             position: fixed; /* Mantém a notificação em uma posição fixa na tela */
             top: 10px; /* Ajusta a posição a partir do topo */
             right: 10px; /* Ajusta a posição a partir da direita */
+            z-index: 1000; /* Garante que a notificação esteja acima de outros elementos */
+        }
+
+        .notification {
             background-color: #4CAF50; /* Cor de fundo da notificação */
             color: white; /* Cor do texto da notificação */
             padding: 15px; /* Espaçamento interno da notificação */
             border-radius: 5px; /* Bordas arredondadas */
-            z-index: 1000; /* Garante que a notificação esteja acima de outros elementos */
+            margin-bottom: 10px; /* Espaçamento entre notificações */
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Sombra para destacar a notificação */
         }
     </style>
 </head>
@@ -96,6 +101,7 @@
     <footer>
         <p>&copy; 2024 DevStream. All rights reserved.</p>
     </footer>
+    <div id="notifications" class="notification-container"></div>
     <script src="scripts.js"></script>
     <script>
         // Código JavaScript para exibir notificações
