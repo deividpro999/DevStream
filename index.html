@@ -5,6 +5,48 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>DevStream</title>
     <link rel="stylesheet" href="styles.css">
+    <style>
+        /* Estilos para a grid de miniaturas */
+        .stream-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+            gap: 20px;
+            margin-top: 20px;
+        }
+
+        .stream-thumbnail {
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            overflow: hidden;
+            text-align: center;
+            background-color: #f9f9f9;
+            padding: 10px;
+        }
+
+        .stream-thumbnail img {
+            width: 100%;
+            height: auto;
+            border-bottom: 1px solid #ddd;
+            margin-bottom: 10px;
+        }
+
+        .stream-thumbnail p {
+            font-size: 16px;
+            color: #333;
+        }
+
+        /* Estilos para a notificação */
+        .notification {
+            position: fixed; /* Mantém a notificação em uma posição fixa na tela */
+            top: 10px; /* Ajusta a posição a partir do topo */
+            right: 10px; /* Ajusta a posição a partir da direita */
+            background-color: #4CAF50; /* Cor de fundo da notificação */
+            color: white; /* Cor do texto da notificação */
+            padding: 15px; /* Espaçamento interno da notificação */
+            border-radius: 5px; /* Bordas arredondadas */
+            z-index: 1000; /* Garante que a notificação esteja acima de outros elementos */
+        }
+    </style>
 </head>
 <body>
     <header>
@@ -54,35 +96,24 @@
     <footer>
         <p>&copy; 2024 DevStream. All rights reserved.</p>
     </footer>
+    <script src="scripts.js"></script>
     <script>
-        document.addEventListener('DOMContentLoaded', () => {
-            // Adicionar evento de clique nas miniaturas
-            const thumbnails = document.querySelectorAll('.stream-thumbnail');
+        // Código JavaScript para exibir notificações
+        function showNotification(message) {
+            var notificationContainer = document.getElementById('notifications');
+            var notification = document.createElement('div');
+            notification.className = 'notification';
+            notification.innerText = message;
+            notificationContainer.appendChild(notification);
             
-            thumbnails.forEach(thumbnail => {
-                thumbnail.addEventListener('click', () => {
-                    const username = thumbnail.querySelector('p').textContent;
-                    alert(`Iniciando transmissão de ${username}`);
-                    // Aqui você pode adicionar a lógica para exibir detalhes ou iniciar a transmissão
-                });
-            });
+            setTimeout(function() {
+                notificationContainer.removeChild(notification);
+            }, 5000); // Remove a notificação após 5 segundos
+        }
 
-            // Atualizar a lista de transmissões
-            const updateButton = document.getElementById('update-streams');
-            const streamGrid = document.querySelector('.stream-grid');
-
-            if (updateButton) {
-                updateButton.addEventListener('click', () => {
-                    // Lógica para adicionar novas miniaturas
-                    const newThumbnail = document.createElement('div');
-                    newThumbnail.classList.add('stream-thumbnail');
-                    newThumbnail.innerHTML = `
-                        <img src="path/to/new-image.jpg" alt="New Stream">
-                        <p>Nome do usuário Novo</p>
-                    `;
-                    streamGrid.appendChild(newThumbnail);
-                });
-            }
+        // Exemplo de chamada de notificação
+        document.addEventListener('DOMContentLoaded', function() {
+            showNotification('Iniciando transmissão de Nome do usuário 1');
         });
     </script>
 </body>
