@@ -1,5 +1,9 @@
-// Exemplo de código JavaScript para a interface (se necessário)
-// Se não houver código específico, deixe em branco ou remova este arquivo
 document.addEventListener('DOMContentLoaded', function() {
-    // Código para interatividade, se necessário
+    // Exemplo: Adicionar funcionalidade de clique em miniaturas
+    const thumbnails = document.querySelectorAll('.stream-thumbnail');
+    thumbnails.forEach(thumbnail => {
+        thumbnail.addEventListener('click', function() {
+            alert(`You clicked on ${this.querySelector('p').textContent}`);
+        });
+    });
 });
