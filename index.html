@@ -26,6 +26,26 @@
             width: 100%;
             height: auto;
         }
+
+        /* Estilo do botão */
+        #action-button {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            padding: 10px 20px;
+            background-color: #ff5733;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+            display: block; /* Garantir que esteja visível */
+            z-index: 1000; /* Trazer o botão para frente */
+        }
+
+        #action-button:hover {
+            background-color: #ff784e; /* Efeito ao passar o mouse */
+        }
     </style>
     <script src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js" type="module"></script>
     <script src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
@@ -126,6 +146,8 @@
             <p>Para obter suporte, envie um e-mail para <a href="mailto:support@devstream.com">support@devstream.com</a></p>
         </section>
     </main>
+
+    <button id="action-button">Ação</button>
 
     <footer>
         <p>&copy; 2024 DevStream. Todos os direitos reservados.</p>
