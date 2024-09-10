@@ -3,8 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>DevStream - Perfil</title>
+    <title>DevStream - Home</title>
     <link rel="stylesheet" href="styles.css">
+    <script src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js" type="module"></script>
+    <script src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
 </head>
 <body>
     <header>
@@ -14,11 +16,42 @@
                 <li><a href="index.html"><ion-icon name="home-outline"></ion-icon></a></li>
                 <li><a href="chat.html"><ion-icon name="chatbubble-outline"></ion-icon></a></li>
                 <li><a href="live.html"><ion-icon name="play-circle-outline"></ion-icon></a></li>
-                <li><a href="profile.html"><ion-icon name="person-outline"></ion-icon></a></li>
+                <li><a href="#profile"><ion-icon name="person-outline"></ion-icon></a></li>
             </ul>
         </nav>
     </header>
+
     <main>
+        <!-- Seção inicial com as transmissões ao vivo -->
+        <section id="home">
+            <h2>Bem-vindo ao DevStream</h2>
+            <p>Transmita seu conteúdo sem problemas.</p>
+            <div class="stream-grid">
+                <div class="stream-thumbnail">
+                    <img src="https://via.placeholder.com/150" alt="Transmissão ao vivo 1">
+                    <p>Nome do usuário 1</p>
+                </div>
+                <div class="stream-thumbnail">
+                    <img src="https://via.placeholder.com/150" alt="Transmissão ao vivo 2">
+                    <p>Nome do usuário 2</p>
+                </div>
+                <div class="stream-thumbnail">
+                    <img src="https://via.placeholder.com/150" alt="Transmissão ao vivo 3">
+                    <p>Nome do usuário 3</p>
+                </div>
+                <!-- Adicione mais miniaturas aqui conforme necessário -->
+                <div class="stream-thumbnail">
+                    <img src="https://via.placeholder.com/150" alt="Transmissão ao vivo 4">
+                    <p>Nome do usuário 4</p>
+                </div>
+                <div class="stream-thumbnail">
+                    <img src="https://via.placeholder.com/150" alt="Transmissão ao vivo 5">
+                    <p>Nome do usuário 5</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Seção de perfil -->
         <section id="profile">
             <h2>Perfil do Usuário</h2>
             <div class="profile-info">
@@ -36,9 +69,27 @@
             </div>
             <button id="edit-profile">Editar Perfil</button>
         </section>
+
+        <!-- Seção de características -->
+        <section id="features">
+            <h2>Características</h2>
+            <ul>
+                <li>Transmissão ao vivo</li>
+                <li>Bate-papo em tempo real</li>
+                <li>Sobreposições interativas</li>
+            </ul>
+        </section>
+
+        <!-- Seção de contato -->
+        <section id="contact">
+            <h2>Contate-nos</h2>
+            <p>Para obter suporte, envie um e-mail para <a href="mailto:support@devstream.com">support@devstream.com</a></p>
+        </section>
     </main>
+
     <footer>
         <p>&copy; 2024 DevStream. Todos os direitos reservados.</p>
     </footer>
+
 </body>
 </html>
